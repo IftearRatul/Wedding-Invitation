@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Invitation</title>
+  <meta property="og:title" content="Wedding Invitation" />
+  <meta property="og:description" content="Wedding Ceremony & Reception of Md. Iftear Hossain Ratul & Nabiha Tahsin — Friday, 18th December 2026 at 1:30 PM" />
+  <meta property="og:type" content="website" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Amiri (Arabic), Cormorant Garamond & Great Vibes (Display), Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            arabic: ['"Amiri"', 'serif'],
+            script: ['"Great Vibes"', 'cursive'],
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            ivory: '#FFFDF8',
+            champagne: '#FDF6E7',
+            gold: {
+              light: '#F3D899',
+              DEFAULT: '#C8963E',
+              dark: '#9A6E21',
+            },
+            emeraldRoyal: {
+              light: '#10B981',
+              DEFAULT: '#065F46',
+              dark: '#044332',
+            },
+            roseFestive: {
+              light: '#FFE4E6',
+              DEFAULT: '#BE123C',
+            }
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    /* Custom Animations & Subtle Decorative Patterns */
+    body {
+      background-color: #FFFDF8;
+      background-image: 
+        radial-gradient(at 10% 10%, rgba(243, 216, 153, 0.35) 0px, transparent 50%),
+        radial-gradient(at 90% 15%, rgba(254, 205, 211, 0.3) 0px, transparent 50%),
+        radial-gradient(at 50% 90%, rgba(167, 243, 208, 0.25) 0px, transparent 55%);
+      overflow-x: hidden;
+    }
+
+    /* Subtle Islamic Star Lattice Pattern */
+    .islamic-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23C8963E' stroke-width='0.6' stroke-opacity='0.14'%3E%3Cpath d='M30 0l7.5 22.5L60 30l-22.5 7.5L30 60l-7.5-22.5L0 30l22.5-7.5z'/%3E%3Ccircle cx='30' cy='30' r='8'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* Gold Shimmer Text */
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #9A6E21 0%, #D4A147 45%, #8A5E14 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Wax Seal Pulse */
+    @keyframes sealPulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 10px 25px -5px rgba(190, 18, 60, 0.45), 0 0 0 0 rgba(200, 150, 62, 0.5);
+      }
+      50% {
+        transform: scale(1.04);
+        box-shadow: 0 15px 30px -5px rgba(190, 18, 60, 0.55), 0 0 0 12px rgba(200, 150, 62, 0);
+      }
+    }
+
+    .wax-seal-btn {
+      animation: sealPulse 2.8s infinite ease-in-out;
+    }
+
+    /* Floating Petals / Sparkles */
+    @keyframes floatDown {
+      0% {
+        transform: translateY(-10vh) rotate(0deg) translateX(0px);
+        opacity: 0;
+      }
+      15% {
+        opacity: 0.85;
+      }
+      85% {
+        opacity: 0.85;
+      }
+      100% {
+        transform: translateY(108vh) rotate(360deg) translateX(25px);
+        opacity: 0;
+      }
+    }
+
+    .petal {
+      position: fixed;
+      top: -5%;
+      pointer-events: none;
+      z-index: 40;
+      animation: floatDown linear infinite;
+    }
+
+    /* Smooth Card Reveal */
+    @keyframes cardEntrance {
+      0% {
+        opacity: 0;
+        transform: translateY(24px) scale(0.98);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .animate-card-reveal {
+      animation: cardEntrance 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    /* Envelope Cover Transition */
+    #envelope-overlay {
+      transition: opacity 0.85s ease, transform 0.95s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.85s;
+    }
+    #envelope-overlay.opened {
+      opacity: 0;
+      transform: scale(1.06);
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FDF6E7;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D4A147;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="font-sans text-stone-800 antialiased selection:bg-amber-200 selection:text-emerald-950">
+
+  <!-- Ambient Floating Petals Container -->
+  <div id="petals-container" aria-hidden="true"></div>
+
+  <!-- Toast Notification Banner -->
+  <div
+    id="toast"
+    role="status"
+    class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden items-center gap-2.5 bg-emeraldRoyal-dark text-white px-5 py-3 rounded-full shadow-xl border border-amber-300/40 text-sm font-medium transition-all duration-300"
+  >
+    <svg class="w-5 h-5 text-amber-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+    </svg>
+    <span id="toast-message">Action completed!</span>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- 1. INTERACTIVE ENVELOPE / SEAL OPENING COVER                          -->
+  <!-- ===================================================================== -->
+  <div
+    id="envelope-overlay"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gradient-to-br from-[#FFFDF8] via-[#FDF3DC] to-[#FCE7EB] islamic-pattern"
+  >
+    <div class="relative w-full max-w-md bg-white/95 backdrop-blur-md rounded-3xl p-8 sm:p-10 shadow-2xl border-2 border-amber-300/80 text-center overflow-hidden">
+      <!-- Decorative Corner Flourishes -->
+      <svg class="w-16 h-16 text-amber-500/40 absolute top-2 left-2" viewBox="0 0 100 100" fill="currentColor">
+        <path d="M0,0 L60,0 C30,10 10,30 0,60 Z" />
+      </svg>
+      <svg class="w-16 h-16 text-amber-500/40 absolute top-2 right-2 rotate-90" viewBox="0 0 100 100" fill="currentColor">
+        <path d="M0,0 L60,0 C30,10 10,30 0,60 Z" />
+      </svg>
+      <svg class="w-16 h-16 text-amber-500/40 absolute bottom-2 left-2 -rotate-90" viewBox="0 0 100 100" fill="currentColor">
+        <path d="M0,0 L60,0 C30,10 10,30 0,60 Z" />
+      </svg>
+      <svg class="w-16 h-16 text-amber-500/40 absolute bottom-2 right-2 rotate-180" viewBox="0 0 100 100" fill="currentColor">
+        <path d="M0,0 L60,0 C30,10 10,30 0,60 Z" />
+      </svg>
+
+      <!-- Bismillah Preview -->
+      <p class="font-arabic text-2xl sm:text-3xl text-emeraldRoyal font-bold mb-1" dir="rtl">
+        بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
+      </p>
+      <p class="text-[11px] uppercase tracking-[0.2em] text-amber-700 font-semibold mb-6">
+        Wedding Ceremony Invitation
+      </p>
+
+      <!-- Couple Monogram Names -->
+      <div class="my-4">
+        <h2 class="font-serif italic text-3xl sm:text-4xl font-bold text-stone-800 tracking-wide">
+          Md. Iftear Hossain Ratul
+        </h2>
+        <span class="font-script text-3xl text-roseFestive block my-1">&amp;</span>
+        <h2 class="font-serif italic text-3xl sm:text-4xl font-bold text-stone-800 tracking-wide">
+          Nabiha Tahsin
+        </h2>
+      </div>
+
+      <div class="mt-4 mb-7 inline-block px-5 py-2.5 rounded-2xl bg-amber-50/90 border border-amber-300/80 shadow-xs">
+        <p class="font-serif text-xl sm:text-2xl font-bold text-emeraldRoyal tracking-wide">
+          Friday, 18th December 2026
+        </p>
+        <p class="text-xs sm:text-sm font-semibold text-amber-800 mt-0.5">
+          1:30 PM &bull; Dhaka
+        </p>
+      </div>
+
+      <!-- Interactive Wax Seal Button -->
+      <button
+        id="open-card-btn"
+        type="button"
+        aria-label="Tap to Open Wedding Invitation"
+        class="wax-seal-btn group relative mx-auto flex flex-col items-center justify-center w-28 h-28 rounded-full bg-gradient-to-br from-rose-600 via-roseFestive to-rose-900 text-amber-100 border-4 border-amber-300/90 cursor-pointer focus:outline-none focus:ring-4 focus:ring-amber-300"
+      >
+        <span class="font-script text-2xl leading-none text-amber-200 group-hover:scale-110 transition-transform">
+          R &amp; N
+        </span>
+        <span class="text-[10px] uppercase tracking-widest font-bold mt-1.5 text-white/95">
+          Tap to Open
+        </span>
+      </button>
+
+      <p class="text-xs text-stone-500 mt-6 italic">
+        Tap the royal seal to view your invitation
+      </p>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- 2. MAIN INTERACTIVE WEDDING INVITATION CARD                           -->
+  <!-- ===================================================================== -->
+  <main id="main-invitation" class="min-h-screen py-6 px-3 sm:py-12 sm:px-6 flex flex-col items-center justify-center">
+    
+    <!-- Outer Ornamental Gold Frame -->
+    <article class="relative w-full max-w-2xl bg-white/95 backdrop-blur-sm rounded-[2rem] shadow-[0_20px_60px_-15px_rgba(154,110,33,0.22)] border-2 border-amber-300/80 overflow-hidden animate-card-reveal">
+      
+      <!-- Top Decorative Royal Arch Banner -->
+      <div class="relative bg-gradient-to-b from-[#FDF5E2] via-[#FFF9EC] to-white pt-9 pb-7 px-5 sm:px-10 text-center border-b border-amber-200/70 islamic-pattern">
+        
+        <!-- Ornamental Islamic Arch SVG Top Accent -->
+        <div class="flex justify-center mb-4">
+          <svg class="w-40 h-8 text-gold" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 35 C50 35, 75 5, 100 5 C125 5, 150 35, 190 35" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M35 35 C65 35, 82 14, 100 14 C118 14, 135 35, 165 35" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3"/>
+            <circle cx="100" cy="5" r="3" fill="currentColor"/>
+            <circle cx="10" cy="35" r="2.5" fill="currentColor"/>
+            <circle cx="190" cy="35" r="2.5" fill="currentColor"/>
+          </svg>
+        </div>
+
+        <!-- BISMILLAH HEADER (Arabic + English Meaning) -->
+        <header class="mb-5">
+          <h1
+            class="font-arabic text-3xl sm:text-4xl md:text-[2.6rem] font-bold text-emeraldRoyal leading-relaxed drop-shadow-sm"
+            dir="rtl"
+            lang="ar"
+          >
+            بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
+          </h1>
+          <p class="font-serif italic text-base sm:text-lg text-amber-800 mt-1.5 font-medium">
+            “In the name of Allah, the Most Gracious, the Most Merciful”
+          </p>
+        </header>
+
+        <!-- Divider -->
+        <div class="flex items-center justify-center gap-3 my-4">
+          <span class="h-px w-14 sm:w-24 bg-gradient-to-r from-transparent to-amber-400"></span>
+          <span class="text-amber-500 text-sm">✦</span>
+          <span class="h-px w-14 sm:w-24 bg-gradient-to-l from-transparent to-amber-400"></span>
+        </div>
+
+        <!-- Cordial Invitation Intro -->
+        <p class="text-sm sm:text-base text-stone-600 max-w-lg mx-auto leading-relaxed">
+          With the blessings of Almighty Allah and our beloved parents, we cordially invite you and your family to grace the auspicious occasion of the <span class="font-semibold text-emeraldRoyal">Wedding Ceremony &amp; Reception</span> of
+        </p>
+      </div>
+
+      <!-- =================================================================== -->
+      <!-- COUPLE & FAMILY SECTION (Groom 1st, Bride 2nd)                      -->
+      <!-- =================================================================== -->
+      <section class="px-5 sm:px-10 py-8 text-center relative">
+        
+        <!-- GROOM (1st) -->
+        <div class="bg-gradient-to-r from-amber-50/60 via-champagne/80 to-amber-50/60 rounded-2xl p-5 sm:p-6 border border-amber-200/70 shadow-sm">
+          <span class="inline-block px-3 py-0.5 rounded-full bg-emeraldRoyal/10 text-emeraldRoyal text-[11px] font-bold uppercase tracking-widest mb-2">
+            The Groom
+          </span>
+          <h2 class="font-serif italic text-3xl sm:text-4xl font-bold gold-gradient-text tracking-tight">
+            Md. Iftear Hossain Ratul
+          </h2>
+          <p class="text-xs sm:text-sm text-stone-600 mt-2.5 leading-relaxed">
+            Beloved son of <br class="sm:hidden" />
+            <span class="font-semibold text-stone-800">Md. Ibrahim Molla</span> &amp; <span class="font-semibold text-stone-800">Rashida Begum</span>
+          </p>
+        </div>
+
+        <!-- Decorative Ampersand -->
+        <div class="my-4 flex items-center justify-center">
+          <span class="h-px w-12 bg-rose-200"></span>
+          <span class="mx-4 w-12 h-12 rounded-full bg-rose-50 border border-rose-200 flex items-center justify-center font-script text-3xl text-roseFestive shadow-inner">
+            &amp;
+          </span>
+          <span class="h-px w-12 bg-rose-200"></span>
+        </div>
+
+        <!-- BRIDE (2nd) -->
+        <div class="bg-gradient-to-r from-rose-50/50 via-[#FFF6F7] to-rose-50/50 rounded-2xl p-5 sm:p-6 border border-rose-200/70 shadow-sm">
+          <span class="inline-block px-3 py-0.5 rounded-full bg-roseFestive/10 text-roseFestive text-[11px] font-bold uppercase tracking-widest mb-2">
+            The Bride
+          </span>
+          <h2 class="font-serif italic text-3xl sm:text-4xl font-bold gold-gradient-text tracking-tight">
+            Nabiha Tahsin
+          </h2>
+          <p class="text-xs sm:text-sm text-stone-600 mt-2.5 leading-relaxed">
+            Beloved daughter of <br class="sm:hidden" />
+            <span class="font-semibold text-stone-800">Abul Hasnat Md. Mohsin</span> &amp; <span class="font-semibold text-stone-800">Mahbuba Khatoon</span>
+          </p>
+        </div>
+
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- LIVE COUNTDOWN TIMER (To Dec 18, 2026 at 2:00 PM Dhaka Time)        -->
+      <!-- =================================================================== -->
+      <section class="px-5 sm:px-10 pb-8">
+        <div class="bg-emeraldRoyal-dark text-white rounded-2xl p-5 sm:p-6 shadow-lg border border-amber-400/40 text-center relative overflow-hidden">
+          <p class="text-xs uppercase tracking-[0.2em] text-amber-300 font-semibold mb-3">
+            Counting Down to the Celebration
+          </p>
+          <div id="countdown-grid" class="grid grid-cols-4 gap-2 sm:gap-4 max-w-md mx-auto">
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl py-3 px-2 border border-white/15">
+              <span id="cd-days" class="block font-serif text-2xl sm:text-3xl font-bold text-amber-200">00</span>
+              <span class="text-[10px] sm:text-xs uppercase tracking-wider text-emerald-100">Days</span>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl py-3 px-2 border border-white/15">
+              <span id="cd-hours" class="block font-serif text-2xl sm:text-3xl font-bold text-amber-200">00</span>
+              <span class="text-[10px] sm:text-xs uppercase tracking-wider text-emerald-100">Hours</span>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl py-3 px-2 border border-white/15">
+              <span id="cd-mins" class="block font-serif text-2xl sm:text-3xl font-bold text-amber-200">00</span>
+              <span class="text-[10px] sm:text-xs uppercase tracking-wider text-emerald-100">Mins</span>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl py-3 px-2 border border-white/15">
+              <span id="cd-secs" class="block font-serif text-2xl sm:text-3xl font-bold text-amber-200">00</span>
+              <span class="text-[10px] sm:text-xs uppercase tracking-wider text-emerald-100">Secs</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- CEREMONY & RECEPTION SCHEDULE                                       -->
+      <!-- =================================================================== -->
+      <section class="px-5 sm:px-10 pb-8 space-y-5">
+        <div class="text-center mb-2">
+          <h3 class="font-serif text-2xl sm:text-3xl font-bold text-stone-800">Wedding Program</h3>
+          <p class="text-xs text-stone-500 uppercase tracking-widest mt-0.5">Save the Date</p>
+        </div>
+
+        <!-- Single Main Event: 18th December 2026 -->
+        <div class="rounded-2xl bg-gradient-to-br from-[#FFFDF9] to-[#FDF4E3] border-2 border-amber-400/80 p-5 sm:p-6 shadow-md relative">
+          <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
+            <div class="w-12 h-12 rounded-2xl bg-roseFestive text-white flex items-center justify-center shrink-0 shadow-sm">
+              <!-- Calendar / Celebration Icon -->
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div class="flex-1">
+              <span class="inline-block text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-roseFestive/10 text-roseFestive mb-1">
+                Main Celebration
+              </span>
+              <h4 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900">Wedding Ceremony &amp; Reception</h4>
+              
+              <div class="mt-3 space-y-2.5 text-stone-700">
+                <div class="inline-flex flex-wrap items-center justify-center sm:justify-start gap-2 px-3.5 py-2 rounded-xl bg-amber-100/80 border border-amber-300/80">
+                  <svg class="w-5 h-5 text-amber-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span class="font-serif text-xl sm:text-2xl font-bold text-emeraldRoyal-dark">
+                    Friday, 18th December 2026
+                  </span>
+                  <span class="text-sm sm:text-base font-bold text-roseFestive">
+                    at 1:30 PM
+                  </span>
+                </div>
+
+                <div class="flex items-start justify-center sm:justify-start gap-2 pt-1 text-sm">
+                  <svg class="w-4 h-4 text-roseFestive shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <div>
+                    <p class="font-bold text-stone-900 text-base">
+                      City Mahal Chinese Restaurant And Convention Center Ltd
+                    </p>
+                    <p class="text-stone-600 text-xs sm:text-sm mt-0.5 leading-relaxed">
+                      2nd Floor, Sadhin Bangla Super Market, 105/1/A, Mirpur-1, Opposite Sony Cinema Hall, Dhaka 1216
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Action Buttons Grid -->
+          <div class="mt-6 pt-5 border-t border-amber-200/80 grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+            <!-- 1. Open in Google Maps -->
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=City+Mahal+Chinese+Restaurant+And+Convention+Center+Ltd,+2nd+Floor,+Sadhin+Bangla+Super+Market,+105%2F1%2FA,+Mirpur-1,+Opposite+Sony+Cinema+Hall,+Dhaka+1216"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-emeraldRoyal hover:bg-emeraldRoyal-dark text-white text-xs sm:text-sm font-semibold shadow-sm transition-all active:scale-95"
+            >
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+              </svg>
+              <span>Google Maps</span>
+            </a>
+
+            <!-- 2. Add to Calendar -->
+            <button
+              id="add-calendar-btn"
+              type="button"
+              class="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-amber-100 hover:bg-amber-200/80 text-amber-950 border border-amber-300 text-xs sm:text-sm font-semibold transition-all active:scale-95 cursor-pointer"
+            >
+              <svg class="w-4 h-4 shrink-0 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              <span>Save Date</span>
+            </button>
+
+            <!-- 3. Share / Copy Invitation -->
+            <button
+              id="share-invite-btn"
+              type="button"
+              class="flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-roseFestive hover:bg-rose-800 text-white text-xs sm:text-sm font-semibold shadow-sm transition-all active:scale-95 cursor-pointer"
+            >
+              <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+              </svg>
+              <span>Share Invite</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- INTERACTIVE BLESSINGS & DUA WALL                                    -->
+      <!-- =================================================================== -->
+      <section class="px-5 sm:px-10 pb-9">
+        <div class="rounded-2xl bg-ivory border border-amber-200/80 p-5 sm:p-6">
+          <div class="text-center mb-4">
+            <h3 class="font-serif text-2xl font-bold text-stone-800">Send Blessings &amp; Dua</h3>
+            <p class="text-xs sm:text-sm text-stone-500 mt-1">
+              Leave a warm wish or prayer for Ratul &amp; Nabiha
+            </p>
+          </div>
+
+          <form id="dua-form" class="space-y-3">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <input
+                type="text"
+                id="guest-name"
+                required
+                placeholder="Your Name"
+                class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-amber-200 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400"
+              />
+              <select
+                id="guest-attendance"
+                class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-amber-200 text-sm text-stone-700 focus:outline-none focus:ring-2 focus:ring-amber-400"
+              >
+                <option value="Joyfully Attending">Joyfully Attending Reception</option>
+                <option value="Sending Duas from Afar">Sending Duas from Afar</option>
+              </select>
+            </div>
+            <textarea
+              id="guest-message"
+              rows="2"
+              required
+              placeholder="Write your blessings & dua for the couple..."
+              class="w-full px-3.5 py-2.5 rounded-xl bg-white border border-amber-200 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 resize-none"
+            ></textarea>
+            <button
+              type="submit"
+              class="w-full py-2.5 px-5 rounded-xl bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-700 hover:to-amber-600 text-white font-semibold text-sm shadow-sm transition-all cursor-pointer"
+            >
+              Post Blessing &amp; Dua ✨
+            </button>
+          </form>
+
+          <!-- Blessings List -->
+          <div id="blessings-list" class="mt-5 space-y-2.5 max-h-56 overflow-y-auto pr-1">
+            <!-- Sample Initial Dua -->
+            <div class="bg-white rounded-xl p-3.5 border border-amber-100 shadow-xs">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="font-semibold text-xs text-emeraldRoyal">Family &amp; Well-Wishers</span>
+                <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-medium">
+                  Heartfelt Dua
+                </span>
+              </div>
+              <p class="text-xs sm:text-sm text-stone-600 italic">
+                “Barakallahu lakuma wa baraka alaykuma wa jama’a baynakuma fi khair. May Allah bless your union with endless love, peace, and happiness.”
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- FOOTER                                                              -->
+      <!-- =================================================================== -->
+      <footer class="bg-gradient-to-t from-[#FDF5E2] to-white px-6 py-6 text-center border-t border-amber-200/60">
+        <p class="font-serif italic text-base sm:text-lg text-stone-700">
+          Your presence &amp; prayers will make our special day truly memorable.
+        </p>
+        <p class="text-xs text-amber-800 font-semibold tracking-wider uppercase mt-2">
+          With Warm Regards &bull; Molla &amp; Mohsin Families
+        </p>
+      </footer>
+    </article>
+
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- INTERACTIVE JAVASCRIPT                                                -->
+  <!-- ===================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Floating Petals Generator
+      const petalsContainer = document.getElementById('petals-container');
+      const petalColors = ['#F59E0B', '#F43F5E', '#FBBF24', '#FDA4AF', '#10B981'];
+      for (let i = 0; i < 16; i++) {
+        const petal = document.createElement('div');
+        petal.className = 'petal';
+        const size = Math.random() * 10 + 7;
+        const left = Math.random() * 100;
+        const duration = Math.random() * 10 + 10;
+        const delay = Math.random() * 8;
+        const color = petalColors[i % petalColors.length];
+
+        petal.style.left = `${left}vw`;
+        petal.style.width = `${size}px`;
+        petal.style.height = `${size * 0.7}px`;
+        petal.style.backgroundColor = color;
+        petal.style.borderRadius = '60% 0 60% 0';
+        petal.style.opacity = '0.45';
+        petal.style.animationDuration = `${duration}s`;
+        petal.style.animationDelay = `${delay}s`;
+        petalsContainer.appendChild(petal);
+      }
+
+      // 2. Toast Notification Helper
+      const toastEl = document.getElementById('toast');
+      const toastMsgEl = document.getElementById('toast-message');
+      let toastTimeout;
+
+      function showToast(message) {
+        toastMsgEl.textContent = message;
+        toastEl.classList.remove('hidden');
+        toastEl.classList.add('flex');
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          toastEl.classList.add('hidden');
+          toastEl.classList.remove('flex');
+        }, 3400);
+      }
+
+      // 3. Interactive Wax Seal Envelope Opening
+      const envelopeOverlay = document.getElementById('envelope-overlay');
+      const openCardBtn = document.getElementById('open-card-btn');
+
+      openCardBtn.addEventListener('click', () => {
+        envelopeOverlay.classList.add('opened');
+      });
+
+      // 4. Live Countdown Timer to Dec 18, 2026 at 1:30 PM (UTC+6 Dhaka Time)
+      const targetDate = new Date('2026-12-18T13:30:00+06:00').getTime();
+      const daysEl = document.getElementById('cd-days');
+      const hoursEl = document.getElementById('cd-hours');
+      const minsEl = document.getElementById('cd-mins');
+      const secsEl = document.getElementById('cd-secs');
+
+      function updateCountdown() {
+        const now = new Date().getTime();
+        const diff = targetDate - now;
+
+        if (diff <= 0) {
+          daysEl.textContent = '00';
+          hoursEl.textContent = '00';
+          minsEl.textContent = '00';
+          secsEl.textContent = '00';
+          return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+        daysEl.textContent = String(days).padStart(2, '0');
+        hoursEl.textContent = String(hours).padStart(2, '0');
+        minsEl.textContent = String(mins).padStart(2, '0');
+        secsEl.textContent = String(secs).padStart(2, '0');
+      }
+
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      // 5. Add to Calendar (.ics File Download — 1:30 PM to 4:30 PM UTC+6 = 07:30Z to 10:30Z)
+      const addCalendarBtn = document.getElementById('add-calendar-btn');
+      addCalendarBtn.addEventListener('click', () => {
+        const icsContent = [
+          'BEGIN:VCALENDAR',
+          'VERSION:2.0',
+          'PRODID:-//Ratul & Nabiha Wedding//EN',
+          'BEGIN:VEVENT',
+          'DTSTART:20261218T073000Z',
+          'DTEND:20261218T103000Z',
+          'SUMMARY:Wedding Ceremony & Reception: Md. Iftear Hossain Ratul & Nabiha Tahsin',
+          'DESCRIPTION:Wedding Ceremony & Reception of Md. Iftear Hossain Ratul (Son of Md. Ibrahim Molla & Rashida Begum) and Nabiha Tahsin (Daughter of Abul Hasnat Md. Mohsin & Mahbuba Khatoon).',
+          'LOCATION:City Mahal Chinese Restaurant And Convention Center Ltd, 2nd Floor, Sadhin Bangla Super Market, 105/1/A, Mirpur-1, Opposite Sony Cinema Hall, Dhaka 1216',
+          'END:VEVENT',
+          'END:VCALENDAR'
+        ].join('\r\n');
+
+        const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'Ratul-and-Nabiha-Wedding-Invitation.ics';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        showToast('Calendar event downloaded!');
+      });
+
+      // 6. Share / Copy Invitation Text
+      const shareInviteBtn = document.getElementById('share-invite-btn');
+      shareInviteBtn.addEventListener('click', async () => {
+        const inviteText = `بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم\nIn the name of Allah, the Most Gracious, the Most Merciful\n\nYou are cordially invited to the Wedding Ceremony & Reception of:\nMd. Iftear Hossain Ratul & Nabiha Tahsin\n\n📅 Date: Friday, 18th December 2026\n⏰ Time: 1:30 PM\n📍 Venue: City Mahal Chinese Restaurant And Convention Center Ltd\n2nd Floor, Sadhin Bangla Super Market, 105/1/A, Mirpur-1, Opposite Sony Cinema Hall, Dhaka 1216\n\n🗺️ Map: https://www.google.com/maps/search/?api=1&query=City+Mahal+Chinese+Restaurant+And+Convention+Center+Ltd,+Mirpur-1,+Dhaka+1216`;
+
+        if (navigator.share) {
+          try {
+            await navigator.share({
+              title: 'Wedding Invitation',
+              text: inviteText,
+              url: window.location.href
+            });
+            return;
+          } catch (err) {
+            // Fallback to copy if user cancels or share fails
+          }
+        }
+
+        // Clipboard fallback using textarea + execCommand('copy')
+        const tempInput = document.createElement('textarea');
+        tempInput.value = inviteText;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        showToast('Invitation details copied to clipboard!');
+      });
+
+      // 7. Interactive Blessings & Dua Wall (with localStorage persistence)
+      const duaForm = document.getElementById('dua-form');
+      const blessingsList = document.getElementById('blessings-list');
+      const STORAGE_KEY = 'ratul_nabiha_wedding_duas';
+
+      function escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+      }
+
+      function renderBlessingCard(item) {
+        const card = document.createElement('div');
+        card.className = 'bg-white rounded-xl p-3.5 border border-amber-100 shadow-xs transition-all';
+        const badgeColor =
+          item.attendance === 'Joyfully Attending'
+            ? 'bg-emerald-50 text-emerald-700'
+            : 'bg-rose-50 text-rose-700';
+
+        card.innerHTML = `
+          <div class="flex items-center justify-between gap-2 mb-1">
+            <span class="font-semibold text-xs text-stone-800">${escapeHtml(item.name)}</span>
+            <span class="text-[10px] px-2 py-0.5 rounded-full ${badgeColor} font-medium">
+              ${escapeHtml(item.attendance)}
+            </span>
+          </div>
+          <p class="text-xs sm:text-sm text-stone-600">“${escapeHtml(item.message)}”</p>
+        `;
+        blessingsList.prepend(card);
+      }
+
+      // Load saved duas
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+        saved.forEach(renderBlessingCard);
+      } catch (e) {
+        // Ignore storage errors
+      }
+
+      duaForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nameInput = document.getElementById('guest-name');
+        const attendanceInput = document.getElementById('guest-attendance');
+        const messageInput = document.getElementById('guest-message');
+
+        const newEntry = {
+          name: nameInput.value.trim(),
+          attendance: attendanceInput.value,
+          message: messageInput.value.trim()
+        };
+
+        if (!newEntry.name || !newEntry.message) return;
+
+        renderBlessingCard(newEntry);
+
+        try {
+          const existing = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+          existing.push(newEntry);
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(existing));
+        } catch (e) {
+          // Ignore storage errors
+        }
+
+        duaForm.reset();
+        showToast('JazakAllah Khair! Your blessing has been posted.');
+      });
+    });
+  </script>
+</body>
+</html>
